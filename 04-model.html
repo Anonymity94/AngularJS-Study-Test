@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS ng-model指令</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+</head>
+<body>
+<!-- demo1 -->
+<!-- <div ng-app="myApp" ng-controller="myCtrl">
+	姓名：<input ng-model="name">
+
+	<p>双向数据绑定：</p>
+	<h1>您输入了：{{name}}</h1>
+</div>
+<script>
+	var app = angular.module('myApp',[]);
+	app.controller('myCtrl',function($scope){
+		$scope.name = "你好啊派大星";
+	});
+</script> -->
+
+<!-- demo2 -->
+<!-- <p>验证用户输入：</p>
+<form ng-app="" name="myForm">
+	Email:
+	<input type="email" name="myAddress" ng-model="text">
+	<span ng-show="myForm.myAddress.$error.email">错误的邮箱格式</span>
+</form> -->
+
+<!-- demo3 -->
+<form ng-app="" name="myForm" ng-init="Mytext='test@qq.com'">
+	Email:
+	<input type="email" name="myAddress" ng-model="Mytext" requird>
+	<h1>状态：</h1>
+	<p>Vaild:{{myForm.myAddress.$valid}}(如果输入的值是合法的则为true)</p>
+	<p>Dirty：{{myForm.myAddress.$dirty}}(如果值改变则为true)</p>
+</form>
+
+</html>

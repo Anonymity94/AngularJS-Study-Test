@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS指令</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+</head>
+<body>
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		名：<input type="text" ng-model="firstName"><br>
+		姓：<input type="text" ng-model="lastName"><br>
+		<br>
+		姓名：{{fullName + "" + lastName}}
+	</div>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope) {
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+		})
+	</script> -->
+	<p>-----------------------------------------------------------</p>
+	<p>控制器方法：</p>
+	<div ng-app="myApp2" ng-controller="personCtrl">
+		名：<input type="text" ng-model="firstName">
+		姓：<input type="text" ng-model="lastName">
+		<br>
+		姓名：{{fullName()}}
+	</div>
+	<script>
+		var app = angular.module('myApp2',[]);
+		app.controller('personCtrl',function($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+			$scope.fullName = function(){
+				return $scope.firstName + " " + $scope.lastName;
+			}
+		})
+	</script>
+
+</body>
+</html>

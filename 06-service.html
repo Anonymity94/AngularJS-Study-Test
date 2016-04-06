@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 服务(Service)</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+</head>
+<body>
+<!-- demo1  $location 服务：可以返回当前页面的URl地址-->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p>$location 服务：可以返回当前页面的URl地址</p>
+		<p>当前页面的URL：</p>
+		<h3>{{myUrl}}</h3>
+	</div>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope,$location){
+			$scope.myUrl = $location.absUrl();
+		})
+	</script> -->
+
+<!--demo2   $timeout 访问在规定的毫秒数后执行指定函数-->
+<!-- <p>------------------------------------</p> -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p>两秒后显示信息</p>
+		<h1>{{myHeader}}</h1>
+	</div>
+	<p>$timeout 访问在规定的毫秒数后执行指定函数。</p>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope,$timeout){
+			$scope.myHeader = "Hello World!";
+			$timeout(function() {
+				$scope.myHeader = "2秒后显示这个句子！";
+			},2000);
+		});
+	</script>
+ -->
+	<!-- demo3  $interval 访问在指定的周期(以毫秒计)来调用函数或计算表达式-->
+	<!-- <p>------------------------------------</p> -->
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>现在的时间是：</p>
+		<h1>{{theTime}}</h1>
+	</div>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope,$interval){
+			$scope.theTime = new Date().toLocaleTimeString();
+			$interval(function(){
+				$scope.theTime = new Date().toLocaleTimeString();
+			},1000);
+		});
+	</script>
+</body>
+</html>
